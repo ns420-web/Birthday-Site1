@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <script>
+    // 🔐 Set your password here
+    const sitePassword = "happybirthdaysirafzal";
+    
+    // Ask for password before loading site
+    const enteredPassword = prompt("🎂 Enter password to view this site:");
+    
+    if (enteredPassword !== sitePassword) {
+      document.write("<h1 style='text-align:center;color:red;margin-top:50px;'>🚫 Access Denied</h1>");
+      document.close();
+    }
+  </script>
+  
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      color: #333;
+      margin: 0;
+      padding: 0;
+      animation: fadeBg 5s ease-in-out infinite alternate;
+    }
+    @keyframes fadeBg {
+      from { background: linear-gradient(135deg, #ffdde1, #ee9ca7); }
+      to { background: linear-gradient(135deg, #ffd3ec, #fcbad3); }
+    }
+    nav {
+      background: #ff99c8;
+      padding: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    nav button {
+      margin: 0 10px;
+      padding: 10px 20px;
+      background: #ff5e9c;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s ease;
+    }
+    nav button:hover {
+      background: #ff2989;
+      box-shadow: 0 0 10px #ffb3da;
+    }
+    section {
+      display: none;
+      padding: 30px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease;
+    }
+    section.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.5rem;
+      color: #c2185b;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.1);
+    }
+    .btn {
+      margin-top: 20px;
+      padding: 12px 25px;
+      background-color: #8e24aa;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 16px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .btn.playing {
+      background-color: #4caf50 !important;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+    .gallery img {
+      width: 200px;
+      border-radius: 15px;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.9);
+    }
+    .modal img {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 80vh;
+      margin-top: 60px;
+    }
+    .modal span {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    iframe { display: none; }
+    #message p {
+      max-width: 800px;
+      margin: auto;
+      text-align: left;
+      background: rgba(255,255,255,0.7);
+      padding: 20px;
+      border-radius: 20px;
+      line-height: 1.7;
+      font-size: 1.1rem;
+      backdrop-filter: blur(4px);
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <button onclick="showSection('home')">Home</button>
+    <button onclick="showSection('message')">Birthday Message</button>
+    <button onclick="showSection('gallery')">Gallery</button>
+  </nav>
+
+  <section id="home" class="active">
+    <h1>🎉 Welcome to the Birthday Celebration! 🎉</h1>
+    <p>Click the buttons above to explore the birthday wishes and gallery!</p>
+    <button class="btn" onclick="toggleMusic(this)">🎵 Play Birthday Music</button>
+    <div id="yt-player"><iframe id="ytFrame" width="0" height="0"
+      src="https://www.youtube.com/embed/8QF9hM1MQwc?autoplay=1&loop=1&playlist=8QF9hM1MQwc"
+      frameborder="0" allow="autoplay" allowfullscreen></iframe></div>
+  </section>
+
+  <section id="message">
+    <h1>🎂 Happy Birthday Sir Afzal! 🎂</h1>
+    <p>
+      Many many happiest returns of the day❣❣❣❣❣💖💖💖💕💞<br>
+May your all wishes come true ❣❣<br>
+May you achieve whatever you desire in your life❤❤🩷🩷<br>
+May you live a long, happy and healthy life filled with happiness, love, joy, fun and alot of blessings 💕💕💕<br>
+You are very very very nice, adorable, honest, kind, gorgeous, handsome, special and best person in the world🌍<br>
+May Allah bless you and your all wishes come true🌺🌈🌸<br>
+Allah Pak apko itni khushiyan dein ke ap ka guman bhi na ho.✨🤲<br>
+Allah Pak hamesha apko apne hifz o aman mein rakhe aur har buri nazar se bachae 🫶🫶🤲🤲<br>
+I can't explain in words that how much I am happy and grateful to have you in my life ❤❤❤<br>
+You have a beautiful heart with a pure soul🥰🥰❣❣<br>
+Allah apko hamesha khush rakhe aur apko kabhi koi ghum na de ❤❤❤<br>
+Ameeeeeeeeeeeeeennnnnnnnnnnnnn Summmmm Ameeeen<br>🤲🤲🤲🤲🤲🤲🤲🤲🤲🤲🤲🤲🤲🤲🤲🤲🤲🥰🥰❣❤❤🌈🫶💕💕💞💖<br>
+From: Nazish✨🌸
+    </p>
+  </section>
+
+  <section id="gallery">
+    <h1>📸 Birthday Memories</h1>
+    <div class="gallery" id="galleryContainer"></div>
+  </section>
+
+  <div id="imgModal" class="modal">
+    <span onclick="closeModal()">&times;</span>
+    <img id="modalImg" src="" alt="Full View">
+  </div>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+    function toggleMusic(btn) {
+      const iframe = document.getElementById("ytFrame");
+      if (iframe.style.display === "none") {
+        iframe.style.display = "block";
+        btn.textContent = "⏸️ Pause Birthday Music";
+        btn.classList.add("playing");
+      } else {
+        iframe.src = iframe.src;
+        iframe.style.display = "none";
+        btn.textContent = "🎵 Play Birthday Music";
+        btn.classList.remove("playing");
+      }
+    }
+    window.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('galleryContainer');
+      const imageUrls = [...Array(10)].map((_, i) =>
+        `https://placekitten.com/300/20${i + 5}`
+      );
+      imageUrls.forEach((src, index) => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = `Birthday photo ${index + 1}`;
+        img.onclick = () => openModal(src);
+        container.appendChild(img);
+      });
+    });
+    function openModal(src) {
+      document.getElementById("modalImg").src = src;
+      document.getElementById("imgModal").style.display = "block";
+    }
+    function closeModal() {
+      document.getElementById("imgModal").style.display = "none";
+    }
+  </script>
+</body>
+</html>
